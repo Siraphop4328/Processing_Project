@@ -1,0 +1,29 @@
+/*
+import fisica.*;
+FWorld world;
+PImage ballImage;
+
+
+
+void setup(){
+    size(1200, 900);
+    frameRate(165);
+    
+    Fisica.init(this);
+    world = new FWorld();
+    world.setGravity(0, 1000);
+    world.setEdges();
+
+    ballImage = loadImage("H.png");
+    ballImage.resize(50, 50);
+}
+
+
+void draw(){
+    background(0);
+    
+    world.step(1/165.0);
+    world.draw();
+    
+    
+}

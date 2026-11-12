@@ -1,0 +1,17 @@
+
+
+void mousePressed(){
+
+
+FCircle h = new FCircle(50);
+h.setPosition(mouseX, mouseY);
+    h.setDamping(0);
+    h.setAngularDamping(0);
+    h.setRestitution(0.999);
+    h.setFriction(0.01);
+    h.setRotatable(true);
+    h.attachImage(ballImage);
+    world.add(h);
+  }
+    
+}
