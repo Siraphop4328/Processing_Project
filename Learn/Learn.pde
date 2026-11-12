@@ -11,7 +11,7 @@ boolean[] keys = new boolean[128];
 
 
 void setup(){
-    size(1200, 900);
+    fullScreen();
     frameRate(165);
     
     Fisica.init(this);
