@@ -3,36 +3,38 @@
 class Atom{
   
   String type;
+  float temp;
+  FCircle body;
   
 
   Atom(String type){
     
-    if (type == "H"){
+    if (type.equals("H")){
 
-    FCircle atom = new FCircle(30);
-    atom.setPosition(mouseX, mouseY);
-    atom.setDamping(0);
-    atom.setAngularDamping(0);
-    atom.setRestitution(0.999);
-    atom.setFriction(0.01);
-    atom.setRotatable(true);
+    body = new FCircle(30);
+    body.setPosition(mouseX, mouseY);
+    body.setDamping(0);
+    body.setAngularDamping(0);
+    body.setRestitution(0.99);
+    body.setFriction(0.01);
+    body.setRotatable(true);
     ballImage = loadImage("H.png");
     ballImage.resize(30, 30);
-    atom.attachImage(ballImage);
-    world.add(atom);
+    body.attachImage(ballImage);
+    world.add(body);
     }
-    else if (type == "O"){
-    FCircle atom = new FCircle(50);
-    atom.setPosition(mouseX, mouseY);
-    atom.setDamping(0);
-    atom.setAngularDamping(0);
-    atom.setRestitution(0.999);
-    atom.setFriction(0.01);
-    atom.setRotatable(true);
+    else if (type.equals("O")){
+    body = new FCircle(50);
+    body.setPosition(mouseX, mouseY);
+    body.setDamping(0);
+    body.setAngularDamping(0);
+    body.setRestitution(0.99);
+    body.setFriction(0.01);
+    body.setRotatable(true);
     ballImage = loadImage("O.png");
     ballImage.resize(50, 50);
-    atom.attachImage(ballImage);
-    world.add(atom);
+    body.attachImage(ballImage);
+    world.add(body);
     
 
 

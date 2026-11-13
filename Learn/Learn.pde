@@ -3,7 +3,7 @@ import fisica.*;
 
 FWorld world;
 PImage ballImage;
-Atom atoms;
+ArrayList<Atom> atoms = new ArrayList<Atom>();
 boolean[] keys = new boolean[128];
 
 
@@ -29,17 +29,17 @@ void draw(){
     world.step(1/165.0);
     world.draw();
     
+    textSize(16);
+    text(int(frameRate), 10, 20);
     
+  
+
 }
 
 
-void mousePressed(){
-    if(keys['h'] || keys['H']){
-    atoms = new Atom("H");
-    }
 
-    else if(keys['o'] || keys['O']){
-    atoms = new Atom("O");
-    }
+
+
+
     
-}
+    
