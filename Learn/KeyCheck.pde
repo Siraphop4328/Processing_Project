@@ -20,9 +20,7 @@ void keyPressed(){
         atoms.clear();
     }
 
-    else if(){
-
-    }
+   
 }
 
 void keyReleased(){
