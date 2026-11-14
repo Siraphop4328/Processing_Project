@@ -1,10 +1,21 @@
+int w = 5;
 
-int w = 4;
 int cols, rows;
 int[][] grid = create2DArray(cols, rows);
 
+float displayedFps = 0;
+int lastFpsUpdate = 0;
+int updateInterval = 100;
+
+int brushSize = 15;
+float spawnChance = 0.1;
+float deleteChance = 0.5;
+
+
+
+
 void setup() {
-  size(1200, 800);
+  fullScreen();
   frameRate(60);
 
   cols = width / w;
@@ -18,28 +29,16 @@ void draw() {
 
   update();
   nextGrid();
-  deletePixel();
+  deletePixel(brushSize, 0.2);
+  fpsText();
+  
+  
+  
 }
 
 void mouseDragged() {
-  if (mouseButton == LEFT) {
-    int mouseCol = floor(mouseX / w);
-    int mouseRow = floor(mouseY / w);
-
-    int matrix = 20;
-    int radius = floor(matrix / 2);
-    for (int i = -radius; i <= radius; i++) {
-      for (int j = -radius; j <= radius; j++) {
-        if (i * i + j * j <= radius * radius) {
-          if (random(1) < 0.05) {
-            int col = mouseCol + i;
-            int row = mouseRow + j;
-            if (col >= 0 && col < cols && row >= 0 && row < rows) {
-              grid[col][row] = 1;
-            }
-          }
-        }
-      }
-    }
+    spawnPixel(mouseX, mouseY, brushSize, spawnChance);
   }
-}
+
+
+

@@ -1,4 +1,5 @@
 
+
 void nextGrid() {
   int[][] nextGrid = create2DArray(cols, rows);
 
