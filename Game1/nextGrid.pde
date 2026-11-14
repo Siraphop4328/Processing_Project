@@ -1,16 +1,16 @@
 
 
 void nextGrid() {
-  int[][] nextGrid = create2DArray(cols, rows);
+  float[][] nextGrid = create2DArray(cols, rows);
 
   for (int i = 0; i < cols; i++) {
     for (int j = 0; j < rows; j++) {
-      int state = grid[i][j];
-      if (state == 1) {
+      float state = grid[i][j];
+      if (state > 0) {
         int below = j + 1;
 
         if (below < rows && grid[i][below] == 0) {
-          nextGrid[i][below] = 1;
+          nextGrid[i][below] = grid[i][j];
         } else {
           int dir = random(1) < 0.5 ? 1 : -1;
           int diag1 = i + dir;
@@ -18,14 +18,14 @@ void nextGrid() {
 
           if (below < rows && diag1 >= 0 && diag1 < cols && grid[diag1][below] == 0
               && nextGrid[diag1][below] == 0) {
-            nextGrid[diag1][below] = 1;
+            nextGrid[diag1][below] = grid[i][j];
 
           } else if (below < rows && diag2 >= 0 && diag2 < cols && grid[diag2][below] == 0
               && nextGrid[diag2][below] == 0) {
-            nextGrid[diag2][below] = 1;
+            nextGrid[diag2][below] = grid[i][j];
 
           } else {
-            nextGrid[i][j] = 1;
+            nextGrid[i][j] = grid[i][j];
           }
         }
       }

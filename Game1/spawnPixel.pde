@@ -13,11 +13,24 @@ void spawnPixel(int mX, int mY, int matrixSize, float chance){
             int col = mouseCol + i;
             int row = mouseRow + j;
             if (col >= 0 && col < cols && row >= 0 && row < rows) {
-              grid[col][row] = 1;
+              if(grid[col][row] == 0){
+
+              grid[col][row] = hueValue;
+              }
             }
           }
         }
       }
     }
+  }
+  
+  if(hueValue > 360){
+    for(int i = 360; i >0; i--){
+
+    hueValue = i;
+    }
+  }
+  else{
+    hueValue += 0.1;
   }
 }
