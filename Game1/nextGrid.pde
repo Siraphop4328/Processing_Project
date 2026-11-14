@@ -1,10 +1,11 @@
 
-
 void nextGrid() {
 
+  boolean leftToRight = (frameCount % 2 == 0);
 
   for (int j = rows - 2; j >= 0; j--) {
-    for (int i = 0; i < cols; i++) {
+    for (int k = 0; k < cols; k++) {
+      int i = leftToRight ? k : (cols - 1 - k);
       float state = grid[i][j];
       if (state > 0) {
         int below = j + 1;
@@ -30,6 +31,5 @@ void nextGrid() {
       }
     }
   }
-  
 }
 

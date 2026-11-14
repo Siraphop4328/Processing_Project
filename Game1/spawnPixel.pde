@@ -1,6 +1,7 @@
+
 void spawnPixel(int mX, int mY, int matrixSize, float chance){
 
-  if (mouseButton == LEFT) {
+  if (mousePressed && mouseButton == LEFT) {
     int mouseCol = floor(mX / w);
     int mouseRow = floor(mY / w);
 
@@ -37,3 +38,7 @@ void spawnPixel(int mX, int mY, int matrixSize, float chance){
     }
   }
 }
+
+
+
+

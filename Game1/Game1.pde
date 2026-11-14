@@ -7,7 +7,7 @@ float displayedFps = 0;
 int lastFpsUpdate = 0;
 int updateInterval = 100;
 
-int brushSize = 15;
+int brushSize = 20;
 float spawnChance = 0.25;
 float deleteChance = 0.5;
 
