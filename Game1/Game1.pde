@@ -1,5 +1,5 @@
 
-int w = 10;
+int w = 4;
 int cols, rows;
 int[][] grid = create2DArray(cols, rows);
 
@@ -7,7 +7,8 @@ int[][] grid = create2DArray(cols, rows);
 
 void setup(){
     size(1200, 800);
-
+    frameRate(60);
+    
     cols = width / w;
     rows = height / w;
 
