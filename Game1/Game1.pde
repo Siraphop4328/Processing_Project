@@ -26,11 +26,22 @@ void draw(){
 }
     
 void mouseDragged() {
-    int i = floor(mouseX / w);
-    int j = floor(mouseY / w);
-    if(i >= 0 && i < cols && j >= 0 && j < rows){
+    int mouseCol = floor(mouseX / w);
+    int mouseRow = floor(mouseY / w);
 
-        grid[i][j] = 1;
+    int matrix = 20;
+    int extent = floor(matrix / 2);
+    for(int i = -extent; i <= extent; i++){
+        for(int j = -extent; j <= extent; j++){
+            if(random(1) < 0.1){
+
+            int col = mouseCol + i;
+            int row = mouseRow + j;
+            if(i >= 0 && i < cols && j >= 0 && j < rows){
+            grid[col][row] = 1;
+            }
+            }
+        }
     }
 }
     
