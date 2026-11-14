@@ -25,12 +25,15 @@ void spawnPixel(int mX, int mY, int matrixSize, float chance){
   }
   
   if(hueValue > 360){
-    for(int i = 360; i >0; i--){
+    for(int i = 360; i > 0; i--){
 
     hueValue = i;
     }
   }
   else{
-    hueValue += 0.1;
+    hueValue += random(-1, 3);
+    if(hueValue < 0){
+      hueValue = 0;
+    }
   }
 }
