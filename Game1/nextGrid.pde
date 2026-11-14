@@ -23,7 +23,7 @@ int[][] nextGrid = create2DArray(cols, rows);
 
 
                     }
-                    if (below < rows && diag2 >= 0 && diag2 < cols && grid[diag2][below] == 0 && nextGrid[diag2][below] == 0){
+                    else if (below < rows && diag2 >= 0 && diag2 < cols && grid[diag2][below] == 0 && nextGrid[diag2][below] == 0){
                         nextGrid[diag2][below] = 1;
                         
 

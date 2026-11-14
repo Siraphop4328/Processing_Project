@@ -14,7 +14,7 @@ void setup(){
 
     grid = create2DArray(cols, rows);
 
-    grid[20][20] = 1;
+    
 
 }
 
